@@ -17,7 +17,10 @@ nuevo presupuesto</a>
  <th>Eliminar</th>
  </tr>
  </thead>
- <tbody>
+ <tbody *ngIf="cargando">
+   <tr><td colspan="8"><div style="text-align:center"><div class="loader"></div></div></td></tr>
+ </tbody>
+ <tbody *ngIf="!cargando">
  <tr *ngFor="let presupuesto of presupuestos">
  <td>{{ presupuesto.proveedor }}</td>
  <td>{{ presupuesto.fecha }}</td>
